@@ -1,0 +1,22 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tenco.board.repository.interfaces.ListRepository">
+	<insert id="insert">
+		insert into list_tb(title, contents, username)
+		values(#{title}, #{contents}, #{username})
+	</insert>
+	<update id="updateById">
+		update list_tb set title = #{title}, contents = #{contents}, username = #{username} where id = #{id}
+	</update>
+	<delete id="deleteById">
+		delete from list_tb where id = #{id}
+	</delete>
+	<select id="findAll">
+	select * from list_tb
+	</select>
+	<select id ="findById">
+	select * from list_tb where id = #{id}
+	</select>
+	
+</mapper>
+	
